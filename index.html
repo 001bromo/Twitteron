@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Full Video 🎥</title>
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Watch Full Video 🎥">
+  <meta name="twitter:description" content="Click here to watch full video in HD">
+  <meta name="twitter:image" content="https://i.postimg.cc/Sjbp51bb/IMG-20260928-141213.jpg">
+
+  <meta property="og:title" content="Watch Full Video 🎥">
+  <meta property="og:description" content="Click here to watch full video in HD">
+  <meta property="og:image" content="https://i.postimg.cc/Sjbp51bb/IMG-20260928-141213.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Video Player Container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      cursor: pointer;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Outer Wrapper for Buffering and Play Icon */
+    .buffering-box {
+      position: absolute;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Circular Buffering Ring */
+    .spinner-ring {
+      position: relative;
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.15);
+      border-top: 4px solid #ffffff;
+      border-right: 4px solid #ffffff;
+      animation: spin 1.1s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Red Play Button inside Buffering Ring */
+    .play-circle {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #e50914;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+    }
+
+    .play-circle::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 16px solid #fff;
+      margin-left: 3px;
+    }
+
+    /* Buffering Text */
+    .buffering-text {
+      color: #ffffff;
+      font-size: 16px;
+      margin-top: 25px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-container" onclick="openLink()">
+    
+    <!-- Buffering Ring + Red Play Icon + Text Overlay -->
+    <div class="buffering-box">
+      <div class="spinner-ring"></div>
+      <div class="play-circle"></div>
+      <div class="buffering-text">Buffering HD Stream (99%)...</div>
+    </div>
+
+    <video id="myVideo" autoplay loop muted playsinline poster="https://i.postimg.cc/Sjbp51bb/IMG-20260928-141213.jpg">
+      <source src="https://files.catbox.moe/gdiosr.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <script>
+    var targetUrl = "https://suszhi.com/2144900";
+
+    function openLink() {
+      window.location.href = targetUrl;
+    }
+
+    // 3 seconds baad automatic redirect
+    setTimeout(function() {
+      window.location.href = targetUrl;
+    }, 3000);
+  </script>
+</body>
+</html>
